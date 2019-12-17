@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Hello Spring Boot</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Lista</h1>
+		</div>
+		<form class="form-inline" method="post" th:object="${lista}" th:action="@{/lista}" style="margin: 20px 0">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Nome" th:field="*{nome}"/> 
+				<input type="text" class="form-control"
+placeholder="Produto" th:field="*{produto}"/>
+<input type="text" class="form-control"
+placeholder="Tipo" th:field="*{tipo}"/>
+				
+				<button type="submit" class="btn btn-primary">Adicionar</button>
+			</div>
+		</form>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Tipo</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
